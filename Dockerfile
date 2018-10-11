@@ -1,4 +1,4 @@
-FROM renovate/node:8.12.0@sha256:b39e0f8d2cdd59192793b280c9cb07f66c8ae22262e82b36931b30c7beda2a9a
+FROM renovate/node@sha256:24f22d6e2e0e57dbf9d24dca0e3c1a1e949c5d67474d73142d717b0f67ef7580
 
 RUN groupadd -g 999 docker
 RUN usermod -aG docker ubuntu
