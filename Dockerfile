@@ -5,7 +5,7 @@ USER root
 RUN groupadd -g 999 docker
 RUN usermod -aG docker ubuntu
 
-ENV DOCKER_VERSION=18.06.1-ce
+ENV DOCKER_VERSION=18.09.2
 
 RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz \
   && tar xzvf docker-${DOCKER_VERSION}.tgz --strip 1 \
