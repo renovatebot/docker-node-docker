@@ -9,7 +9,7 @@ ENV DOCKER_VERSION=18.09.2
 
 RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz \
   && tar xzvf docker-${DOCKER_VERSION}.tgz --strip 1 \
-                 -C /usr/local/bin docker/docker \
+  -C /usr/local/bin docker/docker \
   && rm docker-${DOCKER_VERSION}.tgz
 
 USER ubuntu
