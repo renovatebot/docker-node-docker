@@ -12,4 +12,18 @@ RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${
   -C /usr/local/bin docker/docker \
   && rm docker-${DOCKER_VERSION}.tgz
 
+# npm
+
+ENV NPM_VERSION=6.9.0
+
+RUN npm install -g npm@$NPM_VERSION
+
+# Yarn
+
+ENV YARN_VERSION=1.15.2
+
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version ${YARN_VERSION}
+
+ENV PATH="/home/ubuntu/.yarn/bin:/home/ubuntu/.config/yarn/global/node_modules/.bin:$PATH"
+
 USER ubuntu
