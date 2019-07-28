@@ -1,4 +1,4 @@
-FROM renovate/node@sha256:ff7a2cd06b3b7e02fd1be02dc3343fb4cf4ff2298ff227c11b1dfc99231c751a
+FROM renovate/node@sha256:9ccfc811bf373ed87d40eefa9d7bcaa919966eea87b77ee5d18e7b2bb30c765d
 
 USER root
 
