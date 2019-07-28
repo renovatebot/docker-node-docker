@@ -2,5 +2,6 @@
   "extends": [
     "config:base"
   ],
+  "assignees": ["rarkins"],
   "pinDigests": true
 }
