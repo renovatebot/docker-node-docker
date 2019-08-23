@@ -14,6 +14,10 @@ RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${
   -C /usr/local/bin docker/docker \
   && rm docker-${DOCKER_VERSION}.tgz
 
+# Python
+
+RUN apt-get update && apt-get install -y python-minimal build-essential && apt-get clean
+
 # npm
 
 ENV NPM_VERSION=6.11.2
