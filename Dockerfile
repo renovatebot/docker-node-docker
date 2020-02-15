@@ -1,4 +1,4 @@
-FROM renovate/node@sha256:d9626e860e8370c9d376e9dfe7d0005226dc3a4ab73170a47e30804c33de8b6e
+FROM renovate/node
 
 USER root
 
@@ -20,16 +20,18 @@ RUN apt-get update && apt-get install -y python-minimal build-essential && apt-g
 
 # npm
 
-ENV NPM_VERSION=6.11.2
+ENV NPM_VERSION=6.13.7
 
 RUN npm install -g npm@$NPM_VERSION
 
 # Yarn
 
-ENV YARN_VERSION=1.17.3
+ENV YARN_VERSION=1.22.0
 
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version ${YARN_VERSION}
 
 ENV PATH="/home/ubuntu/.yarn/bin:/home/ubuntu/.config/yarn/global/node_modules/.bin:$PATH"
+
+RUN chown -R ubuntu:root /home/ubuntu
 
 USER ubuntu
