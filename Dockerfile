@@ -14,9 +14,10 @@ RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${
   -C /usr/local/bin docker/docker \
   && rm docker-${DOCKER_VERSION}.tgz
 
-# Python
-
-RUN apt-get update && apt-get install -y python-minimal build-essential && apt-get clean
+# Python 3 and make are required to build node-re2
+RUN apt-get update && apt-get install -y python3-minimal build-essential
+# force python3 for node-gyp
+RUN rm -rf /usr/bin/python && ln /usr/bin/python3 /usr/bin/python
 
 # npm
 
