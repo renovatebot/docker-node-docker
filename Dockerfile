@@ -29,7 +29,7 @@ RUN npm install -g npm@$NPM_VERSION
 
 ENV YARN_VERSION=1.22.0
 
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version ${YARN_VERSION}
+RUN npm install -g yarn@$YARN_VERSION
 
 ENV PATH="/home/ubuntu/.yarn/bin:/home/ubuntu/.config/yarn/global/node_modules/.bin:$PATH"
 
