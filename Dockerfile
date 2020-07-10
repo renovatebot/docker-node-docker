@@ -35,4 +35,11 @@ ENV PATH="/home/ubuntu/.yarn/bin:/home/ubuntu/.config/yarn/global/node_modules/.
 
 RUN chown -R ubuntu:root /home/ubuntu
 
+# Zombie killer: https://github.com/Yelp/dumb-init#readme
+RUN apt-get update && \
+  apt-get install -y dumb-init && \
+  rm -rf /var/lib/apt/lists/*
+
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+
 USER ubuntu
