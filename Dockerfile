@@ -1,4 +1,4 @@
-FROM renovate/node:12.19.1
+FROM renovate/node:12.19.1@sha256:5358e8681c52a44cef455fcdc90ab2d6449fd987092f9dcc13079467a3476095
 
 USER root
 
