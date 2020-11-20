@@ -1,45 +1,15 @@
-FROM renovate/node:12.19.1@sha256:5358e8681c52a44cef455fcdc90ab2d6449fd987092f9dcc13079467a3476095
+# Base image
+#============
+FROM renovate/buildpack:2@sha256:c431f9429c2f442cf9ad1de3c0d8ba07098f30f40b14bb6a572d4382bdf8292f
 
-USER root
+# renovate: datasource=docker versioning=docker
+RUN install-tool node 12.19.1
 
-# Docker
+# renovate: datasource=npm versioning=npm
+RUN install-tool yarn 1.22.10
 
-RUN groupadd -g 999 docker
-RUN usermod -aG docker ubuntu
+# renovate: datasource=docker versioning=docker
+RUN install-tool docker 19.03.13
 
-ENV DOCKER_VERSION=18.09.8
-
-RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz \
-  && tar xzvf docker-${DOCKER_VERSION}.tgz --strip 1 \
-  -C /usr/local/bin docker/docker \
-  && rm docker-${DOCKER_VERSION}.tgz
-
-# Python 3 and make are required to build node-re2
-RUN apt-get update && apt-get install -y python3-minimal build-essential
-# force python3 for node-gyp
-RUN rm -rf /usr/bin/python && ln /usr/bin/python3 /usr/bin/python
-
-# npm
-
-ENV NPM_VERSION=6.13.7
-
-RUN npm install -g npm@$NPM_VERSION
-
-# Yarn
-
-ENV YARN_VERSION=1.22.0
-
-RUN npm install -g yarn@$YARN_VERSION
-
-ENV PATH="/home/ubuntu/.yarn/bin:/home/ubuntu/.config/yarn/global/node_modules/.bin:$PATH"
-
-RUN chown -R ubuntu:root /home/ubuntu
-
-# Zombie killer: https://github.com/Yelp/dumb-init#readme
-RUN apt-get update && \
-  apt-get install -y dumb-init && \
-  rm -rf /var/lib/apt/lists/*
-
-ENTRYPOINT ["/usr/bin/dumb-init", "--"]
-
-USER ubuntu
+# Numeric user ID for the ubuntu user. Used to indicate a non-root user to OpenShift
+USER 1000
