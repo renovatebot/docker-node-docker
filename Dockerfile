@@ -5,6 +5,8 @@ FROM renovate/buildpack:2@sha256:386149aa474a6e0df1f1cea77377a9230d80bb531fced10
 # renovate: datasource=docker versioning=docker
 RUN install-tool node 12.19.1
 
+RUN install-apt build-essential python3
+
 # renovate: datasource=npm versioning=npm
 RUN install-tool yarn 1.22.10
 
