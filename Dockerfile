@@ -1,6 +1,6 @@
 # Base image
 #============
-FROM renovate/buildpack:2@sha256:386149aa474a6e0df1f1cea77377a9230d80bb531fced10032acbe3859fe9edd
+FROM renovate/buildpack:2@sha256:eab1ab863b8c5d88fb3fbc75ec46e7d310e01f579c130d3301955c217488d2ba
 
 # renovate: datasource=docker versioning=docker
 RUN install-tool node 12.19.1
