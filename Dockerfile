@@ -1,6 +1,6 @@
 # Base image
 #============
-FROM renovate/buildpack:4
+FROM renovate/buildpack:4@sha256:311ab6e3d11a1589b31b436f3f67267a2c5ea430d06390413f4682a6a9816112
 
 # renovate: datasource=docker versioning=docker
 RUN install-tool node 14.15.5
