@@ -1,11 +1,12 @@
 # Base image
 #============
-FROM renovate/buildpack:2@sha256:386149aa474a6e0df1f1cea77377a9230d80bb531fced10032acbe3859fe9edd
+FROM renovate/buildpack:4
 
 # renovate: datasource=docker versioning=docker
-RUN install-tool node 12.19.1
+RUN install-tool node 14.15.5
 
-RUN install-apt build-essential python3
+# renovate: datasource=github-tags lookupName=renovatebot/python
+RUN install-tool python 3.9.1
 
 # renovate: datasource=npm versioning=npm
 RUN install-tool yarn 1.22.10
