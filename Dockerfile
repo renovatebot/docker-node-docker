@@ -9,7 +9,7 @@ RUN install-apt build-essential
 RUN install-tool node 14.17.6
 
 # renovate: datasource=github-tags lookupName=renovatebot/python
-RUN install-tool python 3.9.2
+RUN install-tool python 3.9.3
 
 # renovate: datasource=npm versioning=npm
 RUN install-tool yarn 1.22.10
