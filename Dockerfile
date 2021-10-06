@@ -12,7 +12,7 @@ RUN install-tool node 14.18.0
 RUN install-tool python 3.9.3
 
 # renovate: datasource=npm versioning=npm
-RUN install-tool yarn 1.22.11
+RUN install-tool yarn 1.22.13
 
 # renovate: datasource=docker versioning=docker
 RUN install-tool docker 19.03.15
