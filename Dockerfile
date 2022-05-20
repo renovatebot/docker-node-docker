@@ -6,7 +6,7 @@ FROM renovate/buildpack:6@sha256:e3ffa7a80894a49964f17284b8bd6d92e3eebd5c51ad490
 RUN install-apt build-essential
 
 # renovate: datasource=docker versioning=node
-RUN install-tool node 14.19.1
+RUN install-tool node 14.19.3
 
 # renovate: datasource=github-tags lookupName=renovatebot/python
 RUN install-tool python 3.9.3
