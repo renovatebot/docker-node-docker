@@ -1,6 +1,6 @@
 # Base image
 #============
-FROM renovate/buildpack:6@sha256:5341b837a42cd0feac1897b3477d79ec910c6f806dd8d3bfbd69efda723b164b
+FROM renovate/buildpack:6@sha256:a3f5031556b079322c0058523f00239ee8010465da68e780dc522be8ec2791a2
 
 # needed for node-gyp npm install
 RUN install-apt build-essential
