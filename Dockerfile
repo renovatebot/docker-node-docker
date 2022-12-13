@@ -6,7 +6,7 @@ FROM ghcr.io/containerbase/buildpack:5.2.4@sha256:d81d3fa0f6b98db4bdca00de54cac0
 RUN install-apt build-essential
 
 # renovate: datasource=docker versioning=node
-RUN install-tool node 16.18.1
+RUN install-tool node 16.19.0
 
 # renovate: datasource=github-tags lookupName=renovatebot/python
 RUN install-tool python 3.9.3
