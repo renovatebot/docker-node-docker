@@ -1,6 +1,6 @@
 # Base image
 #============
-FROM ghcr.io/containerbase/buildpack:5.2.8@sha256:f363a9b95cc7d6c16642c050926a322e75873a5218e8b9c709ec7f43c6de8532
+FROM ghcr.io/containerbase/buildpack:5.10.0@sha256:ec76a4f53317eb8a76f91d74d25382269a99b86c60564260423b7f65fe5f0737
 
 # needed for node-gyp npm install
 RUN install-apt build-essential
